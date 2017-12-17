@@ -1,0 +1,79 @@
+package com.example.amr7.myapplication;
+
+import android.os.Bundle;
+import android.support.v7.app.AppcompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+	// step 1 : Declaration
+	Button addButton, minButton, xButton, divButton;
+	Edit text input1, input2;
+	textView resultsView;
+	int op1, op2, result;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	super. onCreate(saedInstanceState);
+	setContentView)(R.layout.activity_main);
+
+	//Step 2 : Hook Up Step
+	addButton = (Button)findViewByID(R.id.button);
+	minButton = (Button)findViewByID(R.id.button2);
+	xButton = (Button)findViewByID(R.id.button2);
+	divButton = (Button)findViewByID(R.id.button2);
+	input1 = (EditText)findViewByID(R.id.editText);
+	input2 = (EditText)findViewByID(R.id.editText2);
+	resultsView = (TexView)findViewByID(R.id.textView);
+
+	//Step 3
+	addButton.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			op1 = Integer.parseInt(input1.getText().toString()); //convert text > string > Int
+			op2 = Integer.parseInt(input2.getText().toString());
+			result = op1+op2;
+			// Print out
+
+			resultsView.setText(String.valueOf(result));
+		}
+	});
+
+	minButton.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			op1 = Integer.parseInt(input1.getText().toString());
+			op2 = Integer.parseInt(input2.getText().toString());
+			result = op1-op2;
+			// Print out
+
+			resultsView.setText(String.valueOf(result));
+		}
+	});
+
+	xButton.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			op1 = Integer.parseInt(input1.getText().toString());
+			op2 = Integer.parseInt(input2.getText().toString());
+			result = op1*op2;
+			// Print out
+
+			resultsView.setText(String.valueOf(result));
+		}
+	});
+
+	divButton.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			op1 = Integer.parseInt(input1.getText().toString());
+			op2 = Integer.parseInt(input2.getText().toString());
+			result = op1/op2;
+			// Print out
+
+			resultsView.setText(String.valueOf(result));
+		}
+	});
+}
